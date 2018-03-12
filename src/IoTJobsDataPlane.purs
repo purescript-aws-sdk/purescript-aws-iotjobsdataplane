@@ -20,27 +20,33 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "IoTJobsDataPlane" :: String
-
 
 -- | <p>Gets details of a job execution.</p>
 describeJobExecution :: forall eff. DescribeJobExecutionRequest -> Aff (exception :: EXCEPTION | eff) DescribeJobExecutionResponse
-describeJobExecution = Request.request serviceName "describeJobExecution" 
+describeJobExecution = Request.request service method  where
+    service = Request.ServiceName "IoTJobsDataPlane"
+    method = Request.MethodName "describeJobExecution"
 
 
 -- | <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
 getPendingJobExecutions :: forall eff. GetPendingJobExecutionsRequest -> Aff (exception :: EXCEPTION | eff) GetPendingJobExecutionsResponse
-getPendingJobExecutions = Request.request serviceName "getPendingJobExecutions" 
+getPendingJobExecutions = Request.request service method  where
+    service = Request.ServiceName "IoTJobsDataPlane"
+    method = Request.MethodName "getPendingJobExecutions"
 
 
 -- | <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.</p>
 startNextPendingJobExecution :: forall eff. StartNextPendingJobExecutionRequest -> Aff (exception :: EXCEPTION | eff) StartNextPendingJobExecutionResponse
-startNextPendingJobExecution = Request.request serviceName "startNextPendingJobExecution" 
+startNextPendingJobExecution = Request.request service method  where
+    service = Request.ServiceName "IoTJobsDataPlane"
+    method = Request.MethodName "startNextPendingJobExecution"
 
 
 -- | <p>Updates the status of a job execution.</p>
 updateJobExecution :: forall eff. UpdateJobExecutionRequest -> Aff (exception :: EXCEPTION | eff) UpdateJobExecutionResponse
-updateJobExecution = Request.request serviceName "updateJobExecution" 
+updateJobExecution = Request.request service method  where
+    service = Request.ServiceName "IoTJobsDataPlane"
+    method = Request.MethodName "updateJobExecution"
 
 
 -- | <p>The certificate is invalid.</p>
