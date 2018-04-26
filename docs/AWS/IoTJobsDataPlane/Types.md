@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype CertificateValidationException
-  = CertificateValidationException { message :: NullOrUndefined (ErrorMessage') }
+  = CertificateValidationException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The certificate is invalid.</p>
@@ -35,7 +35,7 @@ Constructs CertificateValidationException from required parameters
 #### `newCertificateValidationException'`
 
 ``` purescript
-newCertificateValidationException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> CertificateValidationException
+newCertificateValidationException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> CertificateValidationException
 ```
 
 Constructs CertificateValidationException's fields from required parameters
@@ -60,7 +60,7 @@ Encode DescribeJobExecutionJobId
 
 ``` purescript
 newtype DescribeJobExecutionRequest
-  = DescribeJobExecutionRequest { jobId :: DescribeJobExecutionJobId, thingName :: ThingName, includeJobDocument :: NullOrUndefined (IncludeJobDocument), executionNumber :: NullOrUndefined (ExecutionNumber) }
+  = DescribeJobExecutionRequest { jobId :: DescribeJobExecutionJobId, thingName :: ThingName, includeJobDocument :: Maybe (IncludeJobDocument), executionNumber :: Maybe (ExecutionNumber) }
 ```
 
 ##### Instances
@@ -83,7 +83,7 @@ Constructs DescribeJobExecutionRequest from required parameters
 #### `newDescribeJobExecutionRequest'`
 
 ``` purescript
-newDescribeJobExecutionRequest' :: DescribeJobExecutionJobId -> ThingName -> ({ jobId :: DescribeJobExecutionJobId, thingName :: ThingName, includeJobDocument :: NullOrUndefined (IncludeJobDocument), executionNumber :: NullOrUndefined (ExecutionNumber) } -> { jobId :: DescribeJobExecutionJobId, thingName :: ThingName, includeJobDocument :: NullOrUndefined (IncludeJobDocument), executionNumber :: NullOrUndefined (ExecutionNumber) }) -> DescribeJobExecutionRequest
+newDescribeJobExecutionRequest' :: DescribeJobExecutionJobId -> ThingName -> ({ jobId :: DescribeJobExecutionJobId, thingName :: ThingName, includeJobDocument :: Maybe (IncludeJobDocument), executionNumber :: Maybe (ExecutionNumber) } -> { jobId :: DescribeJobExecutionJobId, thingName :: ThingName, includeJobDocument :: Maybe (IncludeJobDocument), executionNumber :: Maybe (ExecutionNumber) }) -> DescribeJobExecutionRequest
 ```
 
 Constructs DescribeJobExecutionRequest's fields from required parameters
@@ -92,7 +92,7 @@ Constructs DescribeJobExecutionRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeJobExecutionResponse
-  = DescribeJobExecutionResponse { execution :: NullOrUndefined (JobExecution) }
+  = DescribeJobExecutionResponse { execution :: Maybe (JobExecution) }
 ```
 
 ##### Instances
@@ -115,7 +115,7 @@ Constructs DescribeJobExecutionResponse from required parameters
 #### `newDescribeJobExecutionResponse'`
 
 ``` purescript
-newDescribeJobExecutionResponse' :: ({ execution :: NullOrUndefined (JobExecution) } -> { execution :: NullOrUndefined (JobExecution) }) -> DescribeJobExecutionResponse
+newDescribeJobExecutionResponse' :: ({ execution :: Maybe (JobExecution) } -> { execution :: Maybe (JobExecution) }) -> DescribeJobExecutionResponse
 ```
 
 Constructs DescribeJobExecutionResponse's fields from required parameters
@@ -236,7 +236,7 @@ Constructs GetPendingJobExecutionsRequest's fields from required parameters
 
 ``` purescript
 newtype GetPendingJobExecutionsResponse
-  = GetPendingJobExecutionsResponse { inProgressJobs :: NullOrUndefined (JobExecutionSummaryList), queuedJobs :: NullOrUndefined (JobExecutionSummaryList) }
+  = GetPendingJobExecutionsResponse { inProgressJobs :: Maybe (JobExecutionSummaryList), queuedJobs :: Maybe (JobExecutionSummaryList) }
 ```
 
 ##### Instances
@@ -259,7 +259,7 @@ Constructs GetPendingJobExecutionsResponse from required parameters
 #### `newGetPendingJobExecutionsResponse'`
 
 ``` purescript
-newGetPendingJobExecutionsResponse' :: ({ inProgressJobs :: NullOrUndefined (JobExecutionSummaryList), queuedJobs :: NullOrUndefined (JobExecutionSummaryList) } -> { inProgressJobs :: NullOrUndefined (JobExecutionSummaryList), queuedJobs :: NullOrUndefined (JobExecutionSummaryList) }) -> GetPendingJobExecutionsResponse
+newGetPendingJobExecutionsResponse' :: ({ inProgressJobs :: Maybe (JobExecutionSummaryList), queuedJobs :: Maybe (JobExecutionSummaryList) } -> { inProgressJobs :: Maybe (JobExecutionSummaryList), queuedJobs :: Maybe (JobExecutionSummaryList) }) -> GetPendingJobExecutionsResponse
 ```
 
 Constructs GetPendingJobExecutionsResponse's fields from required parameters
@@ -300,7 +300,7 @@ Encode IncludeJobDocument
 
 ``` purescript
 newtype InvalidRequestException
-  = InvalidRequestException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidRequestException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
@@ -325,7 +325,7 @@ Constructs InvalidRequestException from required parameters
 #### `newInvalidRequestException'`
 
 ``` purescript
-newInvalidRequestException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidRequestException
+newInvalidRequestException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidRequestException
 ```
 
 Constructs InvalidRequestException's fields from required parameters
@@ -334,7 +334,7 @@ Constructs InvalidRequestException's fields from required parameters
 
 ``` purescript
 newtype InvalidStateTransitionException
-  = InvalidStateTransitionException { message :: NullOrUndefined (ErrorMessage') }
+  = InvalidStateTransitionException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
@@ -359,7 +359,7 @@ Constructs InvalidStateTransitionException from required parameters
 #### `newInvalidStateTransitionException'`
 
 ``` purescript
-newInvalidStateTransitionException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> InvalidStateTransitionException
+newInvalidStateTransitionException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> InvalidStateTransitionException
 ```
 
 Constructs InvalidStateTransitionException's fields from required parameters
@@ -384,7 +384,7 @@ Encode JobDocument
 
 ``` purescript
 newtype JobExecution
-  = JobExecution { jobId :: NullOrUndefined (JobId), thingName :: NullOrUndefined (ThingName), status :: NullOrUndefined (JobExecutionStatus), statusDetails :: NullOrUndefined (DetailsMap), queuedAt :: NullOrUndefined (QueuedAt), startedAt :: NullOrUndefined (StartedAt), lastUpdatedAt :: NullOrUndefined (LastUpdatedAt), versionNumber :: NullOrUndefined (VersionNumber), executionNumber :: NullOrUndefined (ExecutionNumber), jobDocument :: NullOrUndefined (JobDocument) }
+  = JobExecution { jobId :: Maybe (JobId), thingName :: Maybe (ThingName), status :: Maybe (JobExecutionStatus), statusDetails :: Maybe (DetailsMap), queuedAt :: Maybe (QueuedAt), startedAt :: Maybe (StartedAt), lastUpdatedAt :: Maybe (LastUpdatedAt), versionNumber :: Maybe (VersionNumber), executionNumber :: Maybe (ExecutionNumber), jobDocument :: Maybe (JobDocument) }
 ```
 
 <p>Contains data about a job execution.</p>
@@ -409,7 +409,7 @@ Constructs JobExecution from required parameters
 #### `newJobExecution'`
 
 ``` purescript
-newJobExecution' :: ({ jobId :: NullOrUndefined (JobId), thingName :: NullOrUndefined (ThingName), status :: NullOrUndefined (JobExecutionStatus), statusDetails :: NullOrUndefined (DetailsMap), queuedAt :: NullOrUndefined (QueuedAt), startedAt :: NullOrUndefined (StartedAt), lastUpdatedAt :: NullOrUndefined (LastUpdatedAt), versionNumber :: NullOrUndefined (VersionNumber), executionNumber :: NullOrUndefined (ExecutionNumber), jobDocument :: NullOrUndefined (JobDocument) } -> { jobId :: NullOrUndefined (JobId), thingName :: NullOrUndefined (ThingName), status :: NullOrUndefined (JobExecutionStatus), statusDetails :: NullOrUndefined (DetailsMap), queuedAt :: NullOrUndefined (QueuedAt), startedAt :: NullOrUndefined (StartedAt), lastUpdatedAt :: NullOrUndefined (LastUpdatedAt), versionNumber :: NullOrUndefined (VersionNumber), executionNumber :: NullOrUndefined (ExecutionNumber), jobDocument :: NullOrUndefined (JobDocument) }) -> JobExecution
+newJobExecution' :: ({ jobId :: Maybe (JobId), thingName :: Maybe (ThingName), status :: Maybe (JobExecutionStatus), statusDetails :: Maybe (DetailsMap), queuedAt :: Maybe (QueuedAt), startedAt :: Maybe (StartedAt), lastUpdatedAt :: Maybe (LastUpdatedAt), versionNumber :: Maybe (VersionNumber), executionNumber :: Maybe (ExecutionNumber), jobDocument :: Maybe (JobDocument) } -> { jobId :: Maybe (JobId), thingName :: Maybe (ThingName), status :: Maybe (JobExecutionStatus), statusDetails :: Maybe (DetailsMap), queuedAt :: Maybe (QueuedAt), startedAt :: Maybe (StartedAt), lastUpdatedAt :: Maybe (LastUpdatedAt), versionNumber :: Maybe (VersionNumber), executionNumber :: Maybe (ExecutionNumber), jobDocument :: Maybe (JobDocument) }) -> JobExecution
 ```
 
 Constructs JobExecution's fields from required parameters
@@ -418,7 +418,7 @@ Constructs JobExecution's fields from required parameters
 
 ``` purescript
 newtype JobExecutionState
-  = JobExecutionState { status :: NullOrUndefined (JobExecutionStatus), statusDetails :: NullOrUndefined (DetailsMap), versionNumber :: NullOrUndefined (VersionNumber) }
+  = JobExecutionState { status :: Maybe (JobExecutionStatus), statusDetails :: Maybe (DetailsMap), versionNumber :: Maybe (VersionNumber) }
 ```
 
 <p>Contains data about the state of a job execution.</p>
@@ -443,7 +443,7 @@ Constructs JobExecutionState from required parameters
 #### `newJobExecutionState'`
 
 ``` purescript
-newJobExecutionState' :: ({ status :: NullOrUndefined (JobExecutionStatus), statusDetails :: NullOrUndefined (DetailsMap), versionNumber :: NullOrUndefined (VersionNumber) } -> { status :: NullOrUndefined (JobExecutionStatus), statusDetails :: NullOrUndefined (DetailsMap), versionNumber :: NullOrUndefined (VersionNumber) }) -> JobExecutionState
+newJobExecutionState' :: ({ status :: Maybe (JobExecutionStatus), statusDetails :: Maybe (DetailsMap), versionNumber :: Maybe (VersionNumber) } -> { status :: Maybe (JobExecutionStatus), statusDetails :: Maybe (DetailsMap), versionNumber :: Maybe (VersionNumber) }) -> JobExecutionState
 ```
 
 Constructs JobExecutionState's fields from required parameters
@@ -468,7 +468,7 @@ Encode JobExecutionStatus
 
 ``` purescript
 newtype JobExecutionSummary
-  = JobExecutionSummary { jobId :: NullOrUndefined (JobId), queuedAt :: NullOrUndefined (QueuedAt), startedAt :: NullOrUndefined (StartedAt), lastUpdatedAt :: NullOrUndefined (LastUpdatedAt), versionNumber :: NullOrUndefined (VersionNumber), executionNumber :: NullOrUndefined (ExecutionNumber) }
+  = JobExecutionSummary { jobId :: Maybe (JobId), queuedAt :: Maybe (QueuedAt), startedAt :: Maybe (StartedAt), lastUpdatedAt :: Maybe (LastUpdatedAt), versionNumber :: Maybe (VersionNumber), executionNumber :: Maybe (ExecutionNumber) }
 ```
 
 <p>Contains a subset of information about a job execution.</p>
@@ -493,7 +493,7 @@ Constructs JobExecutionSummary from required parameters
 #### `newJobExecutionSummary'`
 
 ``` purescript
-newJobExecutionSummary' :: ({ jobId :: NullOrUndefined (JobId), queuedAt :: NullOrUndefined (QueuedAt), startedAt :: NullOrUndefined (StartedAt), lastUpdatedAt :: NullOrUndefined (LastUpdatedAt), versionNumber :: NullOrUndefined (VersionNumber), executionNumber :: NullOrUndefined (ExecutionNumber) } -> { jobId :: NullOrUndefined (JobId), queuedAt :: NullOrUndefined (QueuedAt), startedAt :: NullOrUndefined (StartedAt), lastUpdatedAt :: NullOrUndefined (LastUpdatedAt), versionNumber :: NullOrUndefined (VersionNumber), executionNumber :: NullOrUndefined (ExecutionNumber) }) -> JobExecutionSummary
+newJobExecutionSummary' :: ({ jobId :: Maybe (JobId), queuedAt :: Maybe (QueuedAt), startedAt :: Maybe (StartedAt), lastUpdatedAt :: Maybe (LastUpdatedAt), versionNumber :: Maybe (VersionNumber), executionNumber :: Maybe (ExecutionNumber) } -> { jobId :: Maybe (JobId), queuedAt :: Maybe (QueuedAt), startedAt :: Maybe (StartedAt), lastUpdatedAt :: Maybe (LastUpdatedAt), versionNumber :: Maybe (VersionNumber), executionNumber :: Maybe (ExecutionNumber) }) -> JobExecutionSummary
 ```
 
 Constructs JobExecutionSummary's fields from required parameters
@@ -566,7 +566,7 @@ Encode QueuedAt
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { message :: NullOrUndefined (ErrorMessage') }
+  = ResourceNotFoundException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The specified resource does not exist.</p>
@@ -591,7 +591,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -600,7 +600,7 @@ Constructs ResourceNotFoundException's fields from required parameters
 
 ``` purescript
 newtype ServiceUnavailableException
-  = ServiceUnavailableException { message :: NullOrUndefined (ErrorMessage') }
+  = ServiceUnavailableException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The service is temporarily unavailable.</p>
@@ -625,7 +625,7 @@ Constructs ServiceUnavailableException from required parameters
 #### `newServiceUnavailableException'`
 
 ``` purescript
-newServiceUnavailableException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ServiceUnavailableException
+newServiceUnavailableException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ServiceUnavailableException
 ```
 
 Constructs ServiceUnavailableException's fields from required parameters
@@ -634,7 +634,7 @@ Constructs ServiceUnavailableException's fields from required parameters
 
 ``` purescript
 newtype StartNextPendingJobExecutionRequest
-  = StartNextPendingJobExecutionRequest { thingName :: ThingName, statusDetails :: NullOrUndefined (DetailsMap) }
+  = StartNextPendingJobExecutionRequest { thingName :: ThingName, statusDetails :: Maybe (DetailsMap) }
 ```
 
 ##### Instances
@@ -657,7 +657,7 @@ Constructs StartNextPendingJobExecutionRequest from required parameters
 #### `newStartNextPendingJobExecutionRequest'`
 
 ``` purescript
-newStartNextPendingJobExecutionRequest' :: ThingName -> ({ thingName :: ThingName, statusDetails :: NullOrUndefined (DetailsMap) } -> { thingName :: ThingName, statusDetails :: NullOrUndefined (DetailsMap) }) -> StartNextPendingJobExecutionRequest
+newStartNextPendingJobExecutionRequest' :: ThingName -> ({ thingName :: ThingName, statusDetails :: Maybe (DetailsMap) } -> { thingName :: ThingName, statusDetails :: Maybe (DetailsMap) }) -> StartNextPendingJobExecutionRequest
 ```
 
 Constructs StartNextPendingJobExecutionRequest's fields from required parameters
@@ -666,7 +666,7 @@ Constructs StartNextPendingJobExecutionRequest's fields from required parameters
 
 ``` purescript
 newtype StartNextPendingJobExecutionResponse
-  = StartNextPendingJobExecutionResponse { execution :: NullOrUndefined (JobExecution) }
+  = StartNextPendingJobExecutionResponse { execution :: Maybe (JobExecution) }
 ```
 
 ##### Instances
@@ -689,7 +689,7 @@ Constructs StartNextPendingJobExecutionResponse from required parameters
 #### `newStartNextPendingJobExecutionResponse'`
 
 ``` purescript
-newStartNextPendingJobExecutionResponse' :: ({ execution :: NullOrUndefined (JobExecution) } -> { execution :: NullOrUndefined (JobExecution) }) -> StartNextPendingJobExecutionResponse
+newStartNextPendingJobExecutionResponse' :: ({ execution :: Maybe (JobExecution) } -> { execution :: Maybe (JobExecution) }) -> StartNextPendingJobExecutionResponse
 ```
 
 Constructs StartNextPendingJobExecutionResponse's fields from required parameters
@@ -714,7 +714,7 @@ Encode StartedAt
 
 ``` purescript
 newtype TerminalStateException
-  = TerminalStateException { message :: NullOrUndefined (ErrorMessage') }
+  = TerminalStateException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The job is in a terminal state.</p>
@@ -739,7 +739,7 @@ Constructs TerminalStateException from required parameters
 #### `newTerminalStateException'`
 
 ``` purescript
-newTerminalStateException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> TerminalStateException
+newTerminalStateException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> TerminalStateException
 ```
 
 Constructs TerminalStateException's fields from required parameters
@@ -764,7 +764,7 @@ Encode ThingName
 
 ``` purescript
 newtype ThrottlingException
-  = ThrottlingException { message :: NullOrUndefined (ErrorMessage') }
+  = ThrottlingException { message :: Maybe (ErrorMessage') }
 ```
 
 <p>The rate exceeds the limit.</p>
@@ -789,7 +789,7 @@ Constructs ThrottlingException from required parameters
 #### `newThrottlingException'`
 
 ``` purescript
-newThrottlingException' :: ({ message :: NullOrUndefined (ErrorMessage') } -> { message :: NullOrUndefined (ErrorMessage') }) -> ThrottlingException
+newThrottlingException' :: ({ message :: Maybe (ErrorMessage') } -> { message :: Maybe (ErrorMessage') }) -> ThrottlingException
 ```
 
 Constructs ThrottlingException's fields from required parameters
@@ -798,7 +798,7 @@ Constructs ThrottlingException's fields from required parameters
 
 ``` purescript
 newtype UpdateJobExecutionRequest
-  = UpdateJobExecutionRequest { jobId :: JobId, thingName :: ThingName, status :: JobExecutionStatus, statusDetails :: NullOrUndefined (DetailsMap), expectedVersion :: NullOrUndefined (ExpectedVersion), includeJobExecutionState :: NullOrUndefined (IncludeExecutionState), includeJobDocument :: NullOrUndefined (IncludeJobDocument), executionNumber :: NullOrUndefined (ExecutionNumber) }
+  = UpdateJobExecutionRequest { jobId :: JobId, thingName :: ThingName, status :: JobExecutionStatus, statusDetails :: Maybe (DetailsMap), expectedVersion :: Maybe (ExpectedVersion), includeJobExecutionState :: Maybe (IncludeExecutionState), includeJobDocument :: Maybe (IncludeJobDocument), executionNumber :: Maybe (ExecutionNumber) }
 ```
 
 ##### Instances
@@ -821,7 +821,7 @@ Constructs UpdateJobExecutionRequest from required parameters
 #### `newUpdateJobExecutionRequest'`
 
 ``` purescript
-newUpdateJobExecutionRequest' :: JobId -> JobExecutionStatus -> ThingName -> ({ jobId :: JobId, thingName :: ThingName, status :: JobExecutionStatus, statusDetails :: NullOrUndefined (DetailsMap), expectedVersion :: NullOrUndefined (ExpectedVersion), includeJobExecutionState :: NullOrUndefined (IncludeExecutionState), includeJobDocument :: NullOrUndefined (IncludeJobDocument), executionNumber :: NullOrUndefined (ExecutionNumber) } -> { jobId :: JobId, thingName :: ThingName, status :: JobExecutionStatus, statusDetails :: NullOrUndefined (DetailsMap), expectedVersion :: NullOrUndefined (ExpectedVersion), includeJobExecutionState :: NullOrUndefined (IncludeExecutionState), includeJobDocument :: NullOrUndefined (IncludeJobDocument), executionNumber :: NullOrUndefined (ExecutionNumber) }) -> UpdateJobExecutionRequest
+newUpdateJobExecutionRequest' :: JobId -> JobExecutionStatus -> ThingName -> ({ jobId :: JobId, thingName :: ThingName, status :: JobExecutionStatus, statusDetails :: Maybe (DetailsMap), expectedVersion :: Maybe (ExpectedVersion), includeJobExecutionState :: Maybe (IncludeExecutionState), includeJobDocument :: Maybe (IncludeJobDocument), executionNumber :: Maybe (ExecutionNumber) } -> { jobId :: JobId, thingName :: ThingName, status :: JobExecutionStatus, statusDetails :: Maybe (DetailsMap), expectedVersion :: Maybe (ExpectedVersion), includeJobExecutionState :: Maybe (IncludeExecutionState), includeJobDocument :: Maybe (IncludeJobDocument), executionNumber :: Maybe (ExecutionNumber) }) -> UpdateJobExecutionRequest
 ```
 
 Constructs UpdateJobExecutionRequest's fields from required parameters
@@ -830,7 +830,7 @@ Constructs UpdateJobExecutionRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateJobExecutionResponse
-  = UpdateJobExecutionResponse { executionState :: NullOrUndefined (JobExecutionState), jobDocument :: NullOrUndefined (JobDocument) }
+  = UpdateJobExecutionResponse { executionState :: Maybe (JobExecutionState), jobDocument :: Maybe (JobDocument) }
 ```
 
 ##### Instances
@@ -853,7 +853,7 @@ Constructs UpdateJobExecutionResponse from required parameters
 #### `newUpdateJobExecutionResponse'`
 
 ``` purescript
-newUpdateJobExecutionResponse' :: ({ executionState :: NullOrUndefined (JobExecutionState), jobDocument :: NullOrUndefined (JobDocument) } -> { executionState :: NullOrUndefined (JobExecutionState), jobDocument :: NullOrUndefined (JobDocument) }) -> UpdateJobExecutionResponse
+newUpdateJobExecutionResponse' :: ({ executionState :: Maybe (JobExecutionState), jobDocument :: Maybe (JobDocument) } -> { executionState :: Maybe (JobExecutionState), jobDocument :: Maybe (JobDocument) }) -> UpdateJobExecutionResponse
 ```
 
 Constructs UpdateJobExecutionResponse's fields from required parameters

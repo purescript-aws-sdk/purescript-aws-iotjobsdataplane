@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>The certificate is invalid.</p>
 newtype CertificateValidationException = CertificateValidationException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeCertificateValidationException :: Newtype CertificateValidationException _
 derive instance repGenericCertificateValidationException :: Generic CertificateValidationException _
@@ -30,12 +29,12 @@ instance encodeCertificateValidationException :: Encode CertificateValidationExc
 
 -- | Constructs CertificateValidationException from required parameters
 newCertificateValidationException :: CertificateValidationException
-newCertificateValidationException  = CertificateValidationException { "message": (NullOrUndefined Nothing) }
+newCertificateValidationException  = CertificateValidationException { "message": Nothing }
 
 -- | Constructs CertificateValidationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCertificateValidationException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> CertificateValidationException
-newCertificateValidationException'  customize = (CertificateValidationException <<< customize) { "message": (NullOrUndefined Nothing) }
+newCertificateValidationException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> CertificateValidationException
+newCertificateValidationException'  customize = (CertificateValidationException <<< customize) { "message": Nothing }
 
 
 
@@ -51,8 +50,8 @@ instance encodeDescribeJobExecutionJobId :: Encode DescribeJobExecutionJobId whe
 newtype DescribeJobExecutionRequest = DescribeJobExecutionRequest 
   { "jobId" :: (DescribeJobExecutionJobId)
   , "thingName" :: (ThingName)
-  , "includeJobDocument" :: NullOrUndefined (IncludeJobDocument)
-  , "executionNumber" :: NullOrUndefined (ExecutionNumber)
+  , "includeJobDocument" :: Maybe (IncludeJobDocument)
+  , "executionNumber" :: Maybe (ExecutionNumber)
   }
 derive instance newtypeDescribeJobExecutionRequest :: Newtype DescribeJobExecutionRequest _
 derive instance repGenericDescribeJobExecutionRequest :: Generic DescribeJobExecutionRequest _
@@ -62,17 +61,17 @@ instance encodeDescribeJobExecutionRequest :: Encode DescribeJobExecutionRequest
 
 -- | Constructs DescribeJobExecutionRequest from required parameters
 newDescribeJobExecutionRequest :: DescribeJobExecutionJobId -> ThingName -> DescribeJobExecutionRequest
-newDescribeJobExecutionRequest _jobId _thingName = DescribeJobExecutionRequest { "jobId": _jobId, "thingName": _thingName, "executionNumber": (NullOrUndefined Nothing), "includeJobDocument": (NullOrUndefined Nothing) }
+newDescribeJobExecutionRequest _jobId _thingName = DescribeJobExecutionRequest { "jobId": _jobId, "thingName": _thingName, "executionNumber": Nothing, "includeJobDocument": Nothing }
 
 -- | Constructs DescribeJobExecutionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobExecutionRequest' :: DescribeJobExecutionJobId -> ThingName -> ( { "jobId" :: (DescribeJobExecutionJobId) , "thingName" :: (ThingName) , "includeJobDocument" :: NullOrUndefined (IncludeJobDocument) , "executionNumber" :: NullOrUndefined (ExecutionNumber) } -> {"jobId" :: (DescribeJobExecutionJobId) , "thingName" :: (ThingName) , "includeJobDocument" :: NullOrUndefined (IncludeJobDocument) , "executionNumber" :: NullOrUndefined (ExecutionNumber) } ) -> DescribeJobExecutionRequest
-newDescribeJobExecutionRequest' _jobId _thingName customize = (DescribeJobExecutionRequest <<< customize) { "jobId": _jobId, "thingName": _thingName, "executionNumber": (NullOrUndefined Nothing), "includeJobDocument": (NullOrUndefined Nothing) }
+newDescribeJobExecutionRequest' :: DescribeJobExecutionJobId -> ThingName -> ( { "jobId" :: (DescribeJobExecutionJobId) , "thingName" :: (ThingName) , "includeJobDocument" :: Maybe (IncludeJobDocument) , "executionNumber" :: Maybe (ExecutionNumber) } -> {"jobId" :: (DescribeJobExecutionJobId) , "thingName" :: (ThingName) , "includeJobDocument" :: Maybe (IncludeJobDocument) , "executionNumber" :: Maybe (ExecutionNumber) } ) -> DescribeJobExecutionRequest
+newDescribeJobExecutionRequest' _jobId _thingName customize = (DescribeJobExecutionRequest <<< customize) { "jobId": _jobId, "thingName": _thingName, "executionNumber": Nothing, "includeJobDocument": Nothing }
 
 
 
 newtype DescribeJobExecutionResponse = DescribeJobExecutionResponse 
-  { "execution" :: NullOrUndefined (JobExecution)
+  { "execution" :: Maybe (JobExecution)
   }
 derive instance newtypeDescribeJobExecutionResponse :: Newtype DescribeJobExecutionResponse _
 derive instance repGenericDescribeJobExecutionResponse :: Generic DescribeJobExecutionResponse _
@@ -82,12 +81,12 @@ instance encodeDescribeJobExecutionResponse :: Encode DescribeJobExecutionRespon
 
 -- | Constructs DescribeJobExecutionResponse from required parameters
 newDescribeJobExecutionResponse :: DescribeJobExecutionResponse
-newDescribeJobExecutionResponse  = DescribeJobExecutionResponse { "execution": (NullOrUndefined Nothing) }
+newDescribeJobExecutionResponse  = DescribeJobExecutionResponse { "execution": Nothing }
 
 -- | Constructs DescribeJobExecutionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobExecutionResponse' :: ( { "execution" :: NullOrUndefined (JobExecution) } -> {"execution" :: NullOrUndefined (JobExecution) } ) -> DescribeJobExecutionResponse
-newDescribeJobExecutionResponse'  customize = (DescribeJobExecutionResponse <<< customize) { "execution": (NullOrUndefined Nothing) }
+newDescribeJobExecutionResponse' :: ( { "execution" :: Maybe (JobExecution) } -> {"execution" :: Maybe (JobExecution) } ) -> DescribeJobExecutionResponse
+newDescribeJobExecutionResponse'  customize = (DescribeJobExecutionResponse <<< customize) { "execution": Nothing }
 
 
 
@@ -157,8 +156,8 @@ newGetPendingJobExecutionsRequest' _thingName customize = (GetPendingJobExecutio
 
 
 newtype GetPendingJobExecutionsResponse = GetPendingJobExecutionsResponse 
-  { "inProgressJobs" :: NullOrUndefined (JobExecutionSummaryList)
-  , "queuedJobs" :: NullOrUndefined (JobExecutionSummaryList)
+  { "inProgressJobs" :: Maybe (JobExecutionSummaryList)
+  , "queuedJobs" :: Maybe (JobExecutionSummaryList)
   }
 derive instance newtypeGetPendingJobExecutionsResponse :: Newtype GetPendingJobExecutionsResponse _
 derive instance repGenericGetPendingJobExecutionsResponse :: Generic GetPendingJobExecutionsResponse _
@@ -168,12 +167,12 @@ instance encodeGetPendingJobExecutionsResponse :: Encode GetPendingJobExecutions
 
 -- | Constructs GetPendingJobExecutionsResponse from required parameters
 newGetPendingJobExecutionsResponse :: GetPendingJobExecutionsResponse
-newGetPendingJobExecutionsResponse  = GetPendingJobExecutionsResponse { "inProgressJobs": (NullOrUndefined Nothing), "queuedJobs": (NullOrUndefined Nothing) }
+newGetPendingJobExecutionsResponse  = GetPendingJobExecutionsResponse { "inProgressJobs": Nothing, "queuedJobs": Nothing }
 
 -- | Constructs GetPendingJobExecutionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPendingJobExecutionsResponse' :: ( { "inProgressJobs" :: NullOrUndefined (JobExecutionSummaryList) , "queuedJobs" :: NullOrUndefined (JobExecutionSummaryList) } -> {"inProgressJobs" :: NullOrUndefined (JobExecutionSummaryList) , "queuedJobs" :: NullOrUndefined (JobExecutionSummaryList) } ) -> GetPendingJobExecutionsResponse
-newGetPendingJobExecutionsResponse'  customize = (GetPendingJobExecutionsResponse <<< customize) { "inProgressJobs": (NullOrUndefined Nothing), "queuedJobs": (NullOrUndefined Nothing) }
+newGetPendingJobExecutionsResponse' :: ( { "inProgressJobs" :: Maybe (JobExecutionSummaryList) , "queuedJobs" :: Maybe (JobExecutionSummaryList) } -> {"inProgressJobs" :: Maybe (JobExecutionSummaryList) , "queuedJobs" :: Maybe (JobExecutionSummaryList) } ) -> GetPendingJobExecutionsResponse
+newGetPendingJobExecutionsResponse'  customize = (GetPendingJobExecutionsResponse <<< customize) { "inProgressJobs": Nothing, "queuedJobs": Nothing }
 
 
 
@@ -197,7 +196,7 @@ instance encodeIncludeJobDocument :: Encode IncludeJobDocument where encode = ge
 
 -- | <p>The contents of the request were invalid. For example, this code is returned when an UpdateJobExecution request contains invalid status details. The message contains details about the error.</p>
 newtype InvalidRequestException = InvalidRequestException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidRequestException :: Newtype InvalidRequestException _
 derive instance repGenericInvalidRequestException :: Generic InvalidRequestException _
@@ -207,18 +206,18 @@ instance encodeInvalidRequestException :: Encode InvalidRequestException where e
 
 -- | Constructs InvalidRequestException from required parameters
 newInvalidRequestException :: InvalidRequestException
-newInvalidRequestException  = InvalidRequestException { "message": (NullOrUndefined Nothing) }
+newInvalidRequestException  = InvalidRequestException { "message": Nothing }
 
 -- | Constructs InvalidRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidRequestException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidRequestException
-newInvalidRequestException'  customize = (InvalidRequestException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidRequestException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidRequestException
+newInvalidRequestException'  customize = (InvalidRequestException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>An update attempted to change the job execution to a state that is invalid because of the job execution's current state (for example, an attempt to change a request in state SUCCESS to state IN_PROGRESS). In this case, the body of the error message also contains the executionState field.</p>
 newtype InvalidStateTransitionException = InvalidStateTransitionException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeInvalidStateTransitionException :: Newtype InvalidStateTransitionException _
 derive instance repGenericInvalidStateTransitionException :: Generic InvalidStateTransitionException _
@@ -228,12 +227,12 @@ instance encodeInvalidStateTransitionException :: Encode InvalidStateTransitionE
 
 -- | Constructs InvalidStateTransitionException from required parameters
 newInvalidStateTransitionException :: InvalidStateTransitionException
-newInvalidStateTransitionException  = InvalidStateTransitionException { "message": (NullOrUndefined Nothing) }
+newInvalidStateTransitionException  = InvalidStateTransitionException { "message": Nothing }
 
 -- | Constructs InvalidStateTransitionException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidStateTransitionException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> InvalidStateTransitionException
-newInvalidStateTransitionException'  customize = (InvalidStateTransitionException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidStateTransitionException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> InvalidStateTransitionException
+newInvalidStateTransitionException'  customize = (InvalidStateTransitionException <<< customize) { "message": Nothing }
 
 
 
@@ -248,16 +247,16 @@ instance encodeJobDocument :: Encode JobDocument where encode = genericEncode op
 
 -- | <p>Contains data about a job execution.</p>
 newtype JobExecution = JobExecution 
-  { "jobId" :: NullOrUndefined (JobId)
-  , "thingName" :: NullOrUndefined (ThingName)
-  , "status" :: NullOrUndefined (JobExecutionStatus)
-  , "statusDetails" :: NullOrUndefined (DetailsMap)
-  , "queuedAt" :: NullOrUndefined (QueuedAt)
-  , "startedAt" :: NullOrUndefined (StartedAt)
-  , "lastUpdatedAt" :: NullOrUndefined (LastUpdatedAt)
-  , "versionNumber" :: NullOrUndefined (VersionNumber)
-  , "executionNumber" :: NullOrUndefined (ExecutionNumber)
-  , "jobDocument" :: NullOrUndefined (JobDocument)
+  { "jobId" :: Maybe (JobId)
+  , "thingName" :: Maybe (ThingName)
+  , "status" :: Maybe (JobExecutionStatus)
+  , "statusDetails" :: Maybe (DetailsMap)
+  , "queuedAt" :: Maybe (QueuedAt)
+  , "startedAt" :: Maybe (StartedAt)
+  , "lastUpdatedAt" :: Maybe (LastUpdatedAt)
+  , "versionNumber" :: Maybe (VersionNumber)
+  , "executionNumber" :: Maybe (ExecutionNumber)
+  , "jobDocument" :: Maybe (JobDocument)
   }
 derive instance newtypeJobExecution :: Newtype JobExecution _
 derive instance repGenericJobExecution :: Generic JobExecution _
@@ -267,20 +266,20 @@ instance encodeJobExecution :: Encode JobExecution where encode = genericEncode 
 
 -- | Constructs JobExecution from required parameters
 newJobExecution :: JobExecution
-newJobExecution  = JobExecution { "executionNumber": (NullOrUndefined Nothing), "jobDocument": (NullOrUndefined Nothing), "jobId": (NullOrUndefined Nothing), "lastUpdatedAt": (NullOrUndefined Nothing), "queuedAt": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "statusDetails": (NullOrUndefined Nothing), "thingName": (NullOrUndefined Nothing), "versionNumber": (NullOrUndefined Nothing) }
+newJobExecution  = JobExecution { "executionNumber": Nothing, "jobDocument": Nothing, "jobId": Nothing, "lastUpdatedAt": Nothing, "queuedAt": Nothing, "startedAt": Nothing, "status": Nothing, "statusDetails": Nothing, "thingName": Nothing, "versionNumber": Nothing }
 
 -- | Constructs JobExecution's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobExecution' :: ( { "jobId" :: NullOrUndefined (JobId) , "thingName" :: NullOrUndefined (ThingName) , "status" :: NullOrUndefined (JobExecutionStatus) , "statusDetails" :: NullOrUndefined (DetailsMap) , "queuedAt" :: NullOrUndefined (QueuedAt) , "startedAt" :: NullOrUndefined (StartedAt) , "lastUpdatedAt" :: NullOrUndefined (LastUpdatedAt) , "versionNumber" :: NullOrUndefined (VersionNumber) , "executionNumber" :: NullOrUndefined (ExecutionNumber) , "jobDocument" :: NullOrUndefined (JobDocument) } -> {"jobId" :: NullOrUndefined (JobId) , "thingName" :: NullOrUndefined (ThingName) , "status" :: NullOrUndefined (JobExecutionStatus) , "statusDetails" :: NullOrUndefined (DetailsMap) , "queuedAt" :: NullOrUndefined (QueuedAt) , "startedAt" :: NullOrUndefined (StartedAt) , "lastUpdatedAt" :: NullOrUndefined (LastUpdatedAt) , "versionNumber" :: NullOrUndefined (VersionNumber) , "executionNumber" :: NullOrUndefined (ExecutionNumber) , "jobDocument" :: NullOrUndefined (JobDocument) } ) -> JobExecution
-newJobExecution'  customize = (JobExecution <<< customize) { "executionNumber": (NullOrUndefined Nothing), "jobDocument": (NullOrUndefined Nothing), "jobId": (NullOrUndefined Nothing), "lastUpdatedAt": (NullOrUndefined Nothing), "queuedAt": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "status": (NullOrUndefined Nothing), "statusDetails": (NullOrUndefined Nothing), "thingName": (NullOrUndefined Nothing), "versionNumber": (NullOrUndefined Nothing) }
+newJobExecution' :: ( { "jobId" :: Maybe (JobId) , "thingName" :: Maybe (ThingName) , "status" :: Maybe (JobExecutionStatus) , "statusDetails" :: Maybe (DetailsMap) , "queuedAt" :: Maybe (QueuedAt) , "startedAt" :: Maybe (StartedAt) , "lastUpdatedAt" :: Maybe (LastUpdatedAt) , "versionNumber" :: Maybe (VersionNumber) , "executionNumber" :: Maybe (ExecutionNumber) , "jobDocument" :: Maybe (JobDocument) } -> {"jobId" :: Maybe (JobId) , "thingName" :: Maybe (ThingName) , "status" :: Maybe (JobExecutionStatus) , "statusDetails" :: Maybe (DetailsMap) , "queuedAt" :: Maybe (QueuedAt) , "startedAt" :: Maybe (StartedAt) , "lastUpdatedAt" :: Maybe (LastUpdatedAt) , "versionNumber" :: Maybe (VersionNumber) , "executionNumber" :: Maybe (ExecutionNumber) , "jobDocument" :: Maybe (JobDocument) } ) -> JobExecution
+newJobExecution'  customize = (JobExecution <<< customize) { "executionNumber": Nothing, "jobDocument": Nothing, "jobId": Nothing, "lastUpdatedAt": Nothing, "queuedAt": Nothing, "startedAt": Nothing, "status": Nothing, "statusDetails": Nothing, "thingName": Nothing, "versionNumber": Nothing }
 
 
 
 -- | <p>Contains data about the state of a job execution.</p>
 newtype JobExecutionState = JobExecutionState 
-  { "status" :: NullOrUndefined (JobExecutionStatus)
-  , "statusDetails" :: NullOrUndefined (DetailsMap)
-  , "versionNumber" :: NullOrUndefined (VersionNumber)
+  { "status" :: Maybe (JobExecutionStatus)
+  , "statusDetails" :: Maybe (DetailsMap)
+  , "versionNumber" :: Maybe (VersionNumber)
   }
 derive instance newtypeJobExecutionState :: Newtype JobExecutionState _
 derive instance repGenericJobExecutionState :: Generic JobExecutionState _
@@ -290,12 +289,12 @@ instance encodeJobExecutionState :: Encode JobExecutionState where encode = gene
 
 -- | Constructs JobExecutionState from required parameters
 newJobExecutionState :: JobExecutionState
-newJobExecutionState  = JobExecutionState { "status": (NullOrUndefined Nothing), "statusDetails": (NullOrUndefined Nothing), "versionNumber": (NullOrUndefined Nothing) }
+newJobExecutionState  = JobExecutionState { "status": Nothing, "statusDetails": Nothing, "versionNumber": Nothing }
 
 -- | Constructs JobExecutionState's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobExecutionState' :: ( { "status" :: NullOrUndefined (JobExecutionStatus) , "statusDetails" :: NullOrUndefined (DetailsMap) , "versionNumber" :: NullOrUndefined (VersionNumber) } -> {"status" :: NullOrUndefined (JobExecutionStatus) , "statusDetails" :: NullOrUndefined (DetailsMap) , "versionNumber" :: NullOrUndefined (VersionNumber) } ) -> JobExecutionState
-newJobExecutionState'  customize = (JobExecutionState <<< customize) { "status": (NullOrUndefined Nothing), "statusDetails": (NullOrUndefined Nothing), "versionNumber": (NullOrUndefined Nothing) }
+newJobExecutionState' :: ( { "status" :: Maybe (JobExecutionStatus) , "statusDetails" :: Maybe (DetailsMap) , "versionNumber" :: Maybe (VersionNumber) } -> {"status" :: Maybe (JobExecutionStatus) , "statusDetails" :: Maybe (DetailsMap) , "versionNumber" :: Maybe (VersionNumber) } ) -> JobExecutionState
+newJobExecutionState'  customize = (JobExecutionState <<< customize) { "status": Nothing, "statusDetails": Nothing, "versionNumber": Nothing }
 
 
 
@@ -310,12 +309,12 @@ instance encodeJobExecutionStatus :: Encode JobExecutionStatus where encode = ge
 
 -- | <p>Contains a subset of information about a job execution.</p>
 newtype JobExecutionSummary = JobExecutionSummary 
-  { "jobId" :: NullOrUndefined (JobId)
-  , "queuedAt" :: NullOrUndefined (QueuedAt)
-  , "startedAt" :: NullOrUndefined (StartedAt)
-  , "lastUpdatedAt" :: NullOrUndefined (LastUpdatedAt)
-  , "versionNumber" :: NullOrUndefined (VersionNumber)
-  , "executionNumber" :: NullOrUndefined (ExecutionNumber)
+  { "jobId" :: Maybe (JobId)
+  , "queuedAt" :: Maybe (QueuedAt)
+  , "startedAt" :: Maybe (StartedAt)
+  , "lastUpdatedAt" :: Maybe (LastUpdatedAt)
+  , "versionNumber" :: Maybe (VersionNumber)
+  , "executionNumber" :: Maybe (ExecutionNumber)
   }
 derive instance newtypeJobExecutionSummary :: Newtype JobExecutionSummary _
 derive instance repGenericJobExecutionSummary :: Generic JobExecutionSummary _
@@ -325,12 +324,12 @@ instance encodeJobExecutionSummary :: Encode JobExecutionSummary where encode = 
 
 -- | Constructs JobExecutionSummary from required parameters
 newJobExecutionSummary :: JobExecutionSummary
-newJobExecutionSummary  = JobExecutionSummary { "executionNumber": (NullOrUndefined Nothing), "jobId": (NullOrUndefined Nothing), "lastUpdatedAt": (NullOrUndefined Nothing), "queuedAt": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "versionNumber": (NullOrUndefined Nothing) }
+newJobExecutionSummary  = JobExecutionSummary { "executionNumber": Nothing, "jobId": Nothing, "lastUpdatedAt": Nothing, "queuedAt": Nothing, "startedAt": Nothing, "versionNumber": Nothing }
 
 -- | Constructs JobExecutionSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobExecutionSummary' :: ( { "jobId" :: NullOrUndefined (JobId) , "queuedAt" :: NullOrUndefined (QueuedAt) , "startedAt" :: NullOrUndefined (StartedAt) , "lastUpdatedAt" :: NullOrUndefined (LastUpdatedAt) , "versionNumber" :: NullOrUndefined (VersionNumber) , "executionNumber" :: NullOrUndefined (ExecutionNumber) } -> {"jobId" :: NullOrUndefined (JobId) , "queuedAt" :: NullOrUndefined (QueuedAt) , "startedAt" :: NullOrUndefined (StartedAt) , "lastUpdatedAt" :: NullOrUndefined (LastUpdatedAt) , "versionNumber" :: NullOrUndefined (VersionNumber) , "executionNumber" :: NullOrUndefined (ExecutionNumber) } ) -> JobExecutionSummary
-newJobExecutionSummary'  customize = (JobExecutionSummary <<< customize) { "executionNumber": (NullOrUndefined Nothing), "jobId": (NullOrUndefined Nothing), "lastUpdatedAt": (NullOrUndefined Nothing), "queuedAt": (NullOrUndefined Nothing), "startedAt": (NullOrUndefined Nothing), "versionNumber": (NullOrUndefined Nothing) }
+newJobExecutionSummary' :: ( { "jobId" :: Maybe (JobId) , "queuedAt" :: Maybe (QueuedAt) , "startedAt" :: Maybe (StartedAt) , "lastUpdatedAt" :: Maybe (LastUpdatedAt) , "versionNumber" :: Maybe (VersionNumber) , "executionNumber" :: Maybe (ExecutionNumber) } -> {"jobId" :: Maybe (JobId) , "queuedAt" :: Maybe (QueuedAt) , "startedAt" :: Maybe (StartedAt) , "lastUpdatedAt" :: Maybe (LastUpdatedAt) , "versionNumber" :: Maybe (VersionNumber) , "executionNumber" :: Maybe (ExecutionNumber) } ) -> JobExecutionSummary
+newJobExecutionSummary'  customize = (JobExecutionSummary <<< customize) { "executionNumber": Nothing, "jobId": Nothing, "lastUpdatedAt": Nothing, "queuedAt": Nothing, "startedAt": Nothing, "versionNumber": Nothing }
 
 
 
@@ -372,7 +371,7 @@ instance encodeQueuedAt :: Encode QueuedAt where encode = genericEncode options
 
 -- | <p>The specified resource does not exist.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -382,18 +381,18 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The service is temporarily unavailable.</p>
 newtype ServiceUnavailableException = ServiceUnavailableException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeServiceUnavailableException :: Newtype ServiceUnavailableException _
 derive instance repGenericServiceUnavailableException :: Generic ServiceUnavailableException _
@@ -403,18 +402,18 @@ instance encodeServiceUnavailableException :: Encode ServiceUnavailableException
 
 -- | Constructs ServiceUnavailableException from required parameters
 newServiceUnavailableException :: ServiceUnavailableException
-newServiceUnavailableException  = ServiceUnavailableException { "message": (NullOrUndefined Nothing) }
+newServiceUnavailableException  = ServiceUnavailableException { "message": Nothing }
 
 -- | Constructs ServiceUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceUnavailableException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ServiceUnavailableException
-newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "message": (NullOrUndefined Nothing) }
+newServiceUnavailableException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ServiceUnavailableException
+newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "message": Nothing }
 
 
 
 newtype StartNextPendingJobExecutionRequest = StartNextPendingJobExecutionRequest 
   { "thingName" :: (ThingName)
-  , "statusDetails" :: NullOrUndefined (DetailsMap)
+  , "statusDetails" :: Maybe (DetailsMap)
   }
 derive instance newtypeStartNextPendingJobExecutionRequest :: Newtype StartNextPendingJobExecutionRequest _
 derive instance repGenericStartNextPendingJobExecutionRequest :: Generic StartNextPendingJobExecutionRequest _
@@ -424,17 +423,17 @@ instance encodeStartNextPendingJobExecutionRequest :: Encode StartNextPendingJob
 
 -- | Constructs StartNextPendingJobExecutionRequest from required parameters
 newStartNextPendingJobExecutionRequest :: ThingName -> StartNextPendingJobExecutionRequest
-newStartNextPendingJobExecutionRequest _thingName = StartNextPendingJobExecutionRequest { "thingName": _thingName, "statusDetails": (NullOrUndefined Nothing) }
+newStartNextPendingJobExecutionRequest _thingName = StartNextPendingJobExecutionRequest { "thingName": _thingName, "statusDetails": Nothing }
 
 -- | Constructs StartNextPendingJobExecutionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartNextPendingJobExecutionRequest' :: ThingName -> ( { "thingName" :: (ThingName) , "statusDetails" :: NullOrUndefined (DetailsMap) } -> {"thingName" :: (ThingName) , "statusDetails" :: NullOrUndefined (DetailsMap) } ) -> StartNextPendingJobExecutionRequest
-newStartNextPendingJobExecutionRequest' _thingName customize = (StartNextPendingJobExecutionRequest <<< customize) { "thingName": _thingName, "statusDetails": (NullOrUndefined Nothing) }
+newStartNextPendingJobExecutionRequest' :: ThingName -> ( { "thingName" :: (ThingName) , "statusDetails" :: Maybe (DetailsMap) } -> {"thingName" :: (ThingName) , "statusDetails" :: Maybe (DetailsMap) } ) -> StartNextPendingJobExecutionRequest
+newStartNextPendingJobExecutionRequest' _thingName customize = (StartNextPendingJobExecutionRequest <<< customize) { "thingName": _thingName, "statusDetails": Nothing }
 
 
 
 newtype StartNextPendingJobExecutionResponse = StartNextPendingJobExecutionResponse 
-  { "execution" :: NullOrUndefined (JobExecution)
+  { "execution" :: Maybe (JobExecution)
   }
 derive instance newtypeStartNextPendingJobExecutionResponse :: Newtype StartNextPendingJobExecutionResponse _
 derive instance repGenericStartNextPendingJobExecutionResponse :: Generic StartNextPendingJobExecutionResponse _
@@ -444,12 +443,12 @@ instance encodeStartNextPendingJobExecutionResponse :: Encode StartNextPendingJo
 
 -- | Constructs StartNextPendingJobExecutionResponse from required parameters
 newStartNextPendingJobExecutionResponse :: StartNextPendingJobExecutionResponse
-newStartNextPendingJobExecutionResponse  = StartNextPendingJobExecutionResponse { "execution": (NullOrUndefined Nothing) }
+newStartNextPendingJobExecutionResponse  = StartNextPendingJobExecutionResponse { "execution": Nothing }
 
 -- | Constructs StartNextPendingJobExecutionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartNextPendingJobExecutionResponse' :: ( { "execution" :: NullOrUndefined (JobExecution) } -> {"execution" :: NullOrUndefined (JobExecution) } ) -> StartNextPendingJobExecutionResponse
-newStartNextPendingJobExecutionResponse'  customize = (StartNextPendingJobExecutionResponse <<< customize) { "execution": (NullOrUndefined Nothing) }
+newStartNextPendingJobExecutionResponse' :: ( { "execution" :: Maybe (JobExecution) } -> {"execution" :: Maybe (JobExecution) } ) -> StartNextPendingJobExecutionResponse
+newStartNextPendingJobExecutionResponse'  customize = (StartNextPendingJobExecutionResponse <<< customize) { "execution": Nothing }
 
 
 
@@ -464,7 +463,7 @@ instance encodeStartedAt :: Encode StartedAt where encode = genericEncode option
 
 -- | <p>The job is in a terminal state.</p>
 newtype TerminalStateException = TerminalStateException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeTerminalStateException :: Newtype TerminalStateException _
 derive instance repGenericTerminalStateException :: Generic TerminalStateException _
@@ -474,12 +473,12 @@ instance encodeTerminalStateException :: Encode TerminalStateException where enc
 
 -- | Constructs TerminalStateException from required parameters
 newTerminalStateException :: TerminalStateException
-newTerminalStateException  = TerminalStateException { "message": (NullOrUndefined Nothing) }
+newTerminalStateException  = TerminalStateException { "message": Nothing }
 
 -- | Constructs TerminalStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTerminalStateException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> TerminalStateException
-newTerminalStateException'  customize = (TerminalStateException <<< customize) { "message": (NullOrUndefined Nothing) }
+newTerminalStateException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> TerminalStateException
+newTerminalStateException'  customize = (TerminalStateException <<< customize) { "message": Nothing }
 
 
 
@@ -494,7 +493,7 @@ instance encodeThingName :: Encode ThingName where encode = genericEncode option
 
 -- | <p>The rate exceeds the limit.</p>
 newtype ThrottlingException = ThrottlingException 
-  { "message" :: NullOrUndefined (ErrorMessage')
+  { "message" :: Maybe (ErrorMessage')
   }
 derive instance newtypeThrottlingException :: Newtype ThrottlingException _
 derive instance repGenericThrottlingException :: Generic ThrottlingException _
@@ -504,12 +503,12 @@ instance encodeThrottlingException :: Encode ThrottlingException where encode = 
 
 -- | Constructs ThrottlingException from required parameters
 newThrottlingException :: ThrottlingException
-newThrottlingException  = ThrottlingException { "message": (NullOrUndefined Nothing) }
+newThrottlingException  = ThrottlingException { "message": Nothing }
 
 -- | Constructs ThrottlingException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newThrottlingException' :: ( { "message" :: NullOrUndefined (ErrorMessage') } -> {"message" :: NullOrUndefined (ErrorMessage') } ) -> ThrottlingException
-newThrottlingException'  customize = (ThrottlingException <<< customize) { "message": (NullOrUndefined Nothing) }
+newThrottlingException' :: ( { "message" :: Maybe (ErrorMessage') } -> {"message" :: Maybe (ErrorMessage') } ) -> ThrottlingException
+newThrottlingException'  customize = (ThrottlingException <<< customize) { "message": Nothing }
 
 
 
@@ -517,11 +516,11 @@ newtype UpdateJobExecutionRequest = UpdateJobExecutionRequest
   { "jobId" :: (JobId)
   , "thingName" :: (ThingName)
   , "status" :: (JobExecutionStatus)
-  , "statusDetails" :: NullOrUndefined (DetailsMap)
-  , "expectedVersion" :: NullOrUndefined (ExpectedVersion)
-  , "includeJobExecutionState" :: NullOrUndefined (IncludeExecutionState)
-  , "includeJobDocument" :: NullOrUndefined (IncludeJobDocument)
-  , "executionNumber" :: NullOrUndefined (ExecutionNumber)
+  , "statusDetails" :: Maybe (DetailsMap)
+  , "expectedVersion" :: Maybe (ExpectedVersion)
+  , "includeJobExecutionState" :: Maybe (IncludeExecutionState)
+  , "includeJobDocument" :: Maybe (IncludeJobDocument)
+  , "executionNumber" :: Maybe (ExecutionNumber)
   }
 derive instance newtypeUpdateJobExecutionRequest :: Newtype UpdateJobExecutionRequest _
 derive instance repGenericUpdateJobExecutionRequest :: Generic UpdateJobExecutionRequest _
@@ -531,18 +530,18 @@ instance encodeUpdateJobExecutionRequest :: Encode UpdateJobExecutionRequest whe
 
 -- | Constructs UpdateJobExecutionRequest from required parameters
 newUpdateJobExecutionRequest :: JobId -> JobExecutionStatus -> ThingName -> UpdateJobExecutionRequest
-newUpdateJobExecutionRequest _jobId _status _thingName = UpdateJobExecutionRequest { "jobId": _jobId, "status": _status, "thingName": _thingName, "executionNumber": (NullOrUndefined Nothing), "expectedVersion": (NullOrUndefined Nothing), "includeJobDocument": (NullOrUndefined Nothing), "includeJobExecutionState": (NullOrUndefined Nothing), "statusDetails": (NullOrUndefined Nothing) }
+newUpdateJobExecutionRequest _jobId _status _thingName = UpdateJobExecutionRequest { "jobId": _jobId, "status": _status, "thingName": _thingName, "executionNumber": Nothing, "expectedVersion": Nothing, "includeJobDocument": Nothing, "includeJobExecutionState": Nothing, "statusDetails": Nothing }
 
 -- | Constructs UpdateJobExecutionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJobExecutionRequest' :: JobId -> JobExecutionStatus -> ThingName -> ( { "jobId" :: (JobId) , "thingName" :: (ThingName) , "status" :: (JobExecutionStatus) , "statusDetails" :: NullOrUndefined (DetailsMap) , "expectedVersion" :: NullOrUndefined (ExpectedVersion) , "includeJobExecutionState" :: NullOrUndefined (IncludeExecutionState) , "includeJobDocument" :: NullOrUndefined (IncludeJobDocument) , "executionNumber" :: NullOrUndefined (ExecutionNumber) } -> {"jobId" :: (JobId) , "thingName" :: (ThingName) , "status" :: (JobExecutionStatus) , "statusDetails" :: NullOrUndefined (DetailsMap) , "expectedVersion" :: NullOrUndefined (ExpectedVersion) , "includeJobExecutionState" :: NullOrUndefined (IncludeExecutionState) , "includeJobDocument" :: NullOrUndefined (IncludeJobDocument) , "executionNumber" :: NullOrUndefined (ExecutionNumber) } ) -> UpdateJobExecutionRequest
-newUpdateJobExecutionRequest' _jobId _status _thingName customize = (UpdateJobExecutionRequest <<< customize) { "jobId": _jobId, "status": _status, "thingName": _thingName, "executionNumber": (NullOrUndefined Nothing), "expectedVersion": (NullOrUndefined Nothing), "includeJobDocument": (NullOrUndefined Nothing), "includeJobExecutionState": (NullOrUndefined Nothing), "statusDetails": (NullOrUndefined Nothing) }
+newUpdateJobExecutionRequest' :: JobId -> JobExecutionStatus -> ThingName -> ( { "jobId" :: (JobId) , "thingName" :: (ThingName) , "status" :: (JobExecutionStatus) , "statusDetails" :: Maybe (DetailsMap) , "expectedVersion" :: Maybe (ExpectedVersion) , "includeJobExecutionState" :: Maybe (IncludeExecutionState) , "includeJobDocument" :: Maybe (IncludeJobDocument) , "executionNumber" :: Maybe (ExecutionNumber) } -> {"jobId" :: (JobId) , "thingName" :: (ThingName) , "status" :: (JobExecutionStatus) , "statusDetails" :: Maybe (DetailsMap) , "expectedVersion" :: Maybe (ExpectedVersion) , "includeJobExecutionState" :: Maybe (IncludeExecutionState) , "includeJobDocument" :: Maybe (IncludeJobDocument) , "executionNumber" :: Maybe (ExecutionNumber) } ) -> UpdateJobExecutionRequest
+newUpdateJobExecutionRequest' _jobId _status _thingName customize = (UpdateJobExecutionRequest <<< customize) { "jobId": _jobId, "status": _status, "thingName": _thingName, "executionNumber": Nothing, "expectedVersion": Nothing, "includeJobDocument": Nothing, "includeJobExecutionState": Nothing, "statusDetails": Nothing }
 
 
 
 newtype UpdateJobExecutionResponse = UpdateJobExecutionResponse 
-  { "executionState" :: NullOrUndefined (JobExecutionState)
-  , "jobDocument" :: NullOrUndefined (JobDocument)
+  { "executionState" :: Maybe (JobExecutionState)
+  , "jobDocument" :: Maybe (JobDocument)
   }
 derive instance newtypeUpdateJobExecutionResponse :: Newtype UpdateJobExecutionResponse _
 derive instance repGenericUpdateJobExecutionResponse :: Generic UpdateJobExecutionResponse _
@@ -552,12 +551,12 @@ instance encodeUpdateJobExecutionResponse :: Encode UpdateJobExecutionResponse w
 
 -- | Constructs UpdateJobExecutionResponse from required parameters
 newUpdateJobExecutionResponse :: UpdateJobExecutionResponse
-newUpdateJobExecutionResponse  = UpdateJobExecutionResponse { "executionState": (NullOrUndefined Nothing), "jobDocument": (NullOrUndefined Nothing) }
+newUpdateJobExecutionResponse  = UpdateJobExecutionResponse { "executionState": Nothing, "jobDocument": Nothing }
 
 -- | Constructs UpdateJobExecutionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJobExecutionResponse' :: ( { "executionState" :: NullOrUndefined (JobExecutionState) , "jobDocument" :: NullOrUndefined (JobDocument) } -> {"executionState" :: NullOrUndefined (JobExecutionState) , "jobDocument" :: NullOrUndefined (JobDocument) } ) -> UpdateJobExecutionResponse
-newUpdateJobExecutionResponse'  customize = (UpdateJobExecutionResponse <<< customize) { "executionState": (NullOrUndefined Nothing), "jobDocument": (NullOrUndefined Nothing) }
+newUpdateJobExecutionResponse' :: ( { "executionState" :: Maybe (JobExecutionState) , "jobDocument" :: Maybe (JobDocument) } -> {"executionState" :: Maybe (JobExecutionState) , "jobDocument" :: Maybe (JobDocument) } ) -> UpdateJobExecutionResponse
+newUpdateJobExecutionResponse'  customize = (UpdateJobExecutionResponse <<< customize) { "executionState": Nothing, "jobDocument": Nothing }
 
 
 
